@@ -1,0 +1,35 @@
+{
+  "image_size": 320,
+  "region_size": 16,
+  "split_seed": 2026,
+  "model_seeds": [
+    17,
+    29,
+    43
+  ],
+  "fit_images": 1749,
+  "validation_images": 218,
+  "calibration_images": 218,
+  "epochs": {
+    "reference": 60,
+    "candidate": 60,
+    "router": 60,
+    "clean_only_candidate": 60
+  },
+  "batch_size": 2,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "harm_budget_calibration_only": 0.005,
+  "test_replicates_per_condition_per_seed": 1,
+  "software_recorded": {
+    "pytorch": "2.14.0+cu130",
+    "torchvision": "0.29.0+cu130",
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "notes": [
+    "The synthetic training corruption assignment is deterministic per image and seed, not resampled each epoch.",
+    "RGB-D candidate head initializations in clean-only and mixture runs were not exactly paired.",
+    "Calibration harm pools conditions within images before clipping; test harm is per condition."
+  ]
+}

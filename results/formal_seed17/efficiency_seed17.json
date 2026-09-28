@@ -1,0 +1,46 @@
+{
+  "checkpoint": "D:\\PhysCausalDiff\\output\\runs\\formal_seed17\\models.pt",
+  "seed": 17,
+  "input_size": [
+    320,
+    320
+  ],
+  "batch_size": 1,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "torch": "2.14.0+cu130",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "iterations": 100,
+  "warmup": 10,
+  "parameter_count": {
+    "rgb_reference": 11262881,
+    "rgbd_candidate": 22546465,
+    "router": 11937,
+    "two_detectors_plus_router": 33821283
+  },
+  "timings": {
+    "rgb_reference": {
+      "latency_ms_mean": 8.821579215526581,
+      "latency_ms_median": 8.66150426864624,
+      "latency_ms_p95": 13.585510301589965,
+      "throughput_fps": 113.35838805822111,
+      "peak_cuda_allocated_mib": 151.845703125
+    },
+    "rgbd_candidate": {
+      "latency_ms_mean": 15.64706781387329,
+      "latency_ms_median": 16.303616523742676,
+      "latency_ms_p95": 21.37168970108032,
+      "throughput_fps": 63.90973771541794,
+      "peak_cuda_allocated_mib": 155.8134765625
+    },
+    "full_ucrr": {
+      "latency_ms_mean": 23.70482430458069,
+      "latency_ms_median": 23.076863288879395,
+      "latency_ms_p95": 30.962432003021238,
+      "throughput_fps": 42.18550566547592,
+      "peak_cuda_allocated_mib": 156.2041015625
+    }
+  },
+  "threshold": -0.1,
+  "note": "Synchronized batch-1 inference; full_ucrr includes both detectors and the regional router."
+}

@@ -1,0 +1,37 @@
+{
+  "threshold": -0.09999999999999998,
+  "harm_budget": 0.005,
+  "calibration": {
+    "mae": 0.04100946585075021,
+    "rgb_mae": 0.04780481441518924,
+    "benefit": 0.006795348564439027,
+    "harm_rate": 0.3302752293577982,
+    "mean_harm": 0.0044185335704421,
+    "selected_region_fraction": 0.8705291612057666,
+    "n_calibration_images": 218,
+    "n_image_condition_pairs": 3052
+  },
+  "criterion": "maximize calibration mean MAE benefit subject to mean per-image positive MAE harm <= budget",
+  "n_calibration": 218,
+  "seed": 17,
+  "checkpoint": "D:\\PhysCausalDiff\\output\\runs\\formal_seed17\\models.pt",
+  "manifest": "D:\\PhysCausalDiff\\output\\manifests\\combined_train_official.jsonl",
+  "size": 320,
+  "region_size": 16,
+  "calibration_conditions": [
+    "clean",
+    "noise:1",
+    "noise:2",
+    "noise:3",
+    "holes:1",
+    "holes:2",
+    "holes:3",
+    "blur:1",
+    "blur:2",
+    "blur:3",
+    "shift:1",
+    "shift:2",
+    "shift:3",
+    "removal"
+  ]
+}

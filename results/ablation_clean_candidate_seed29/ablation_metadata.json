@@ -1,0 +1,13 @@
+{
+  "seed": 29,
+  "size": 320,
+  "batch_size": 2,
+  "epochs": 60,
+  "fit_count": 1749,
+  "validation_count": 218,
+  "candidate_training_corruption": "clean only",
+  "reference_run": "D:\\PhysCausalDiff\\output\\runs\\formal_seed29",
+  "best_validation_mae": 0.04510927099068094,
+  "initialization_note": "ResNet-18 pretrained initialization is the same source; random decoder/fusion initialization is independently seeded.",
+  "status": "training ablation; evaluate candidate-only MAE against matched robust-training candidate"
+}

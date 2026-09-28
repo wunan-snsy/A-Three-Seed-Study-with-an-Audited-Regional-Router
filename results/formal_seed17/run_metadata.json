@@ -1,0 +1,30 @@
+{
+  "args": {
+    "manifest": "../manifests/combined_train_official.jsonl",
+    "project_root": "D:\\PhysCausalDiff",
+    "seed": 17,
+    "size": 320,
+    "batch_size": 2,
+    "epochs": 60,
+    "limit": 0,
+    "no_pretrained": false,
+    "router_corruption": "mixture",
+    "out": "../runs/formal_seed17",
+    "resume": true
+  },
+  "device": "cuda",
+  "torch": "2.14.0+cu130",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "pretrained_requested": true,
+  "pretrained_resnet18": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+  "partition_counts": {
+    "fit": 1749,
+    "validation": 218,
+    "calibration": 218
+  },
+  "manifest_paths": [
+    "D:\\PhysCausalDiff\\output\\manifests\\combined_train_official.jsonl"
+  ],
+  "status": "training pipeline run; benchmark claims require locked calibration and test evaluation"
+}

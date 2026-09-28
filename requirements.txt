@@ -1,0 +1,9 @@
+numpy>=2.3,<3
+Pillow>=12,<13
+scipy>=1.17,<2
+matplotlib>=3.11,<4
+PySODMetrics==1.5.1
+PyYAML>=6,<7
+tqdm>=4.70,<5
+opencv-python>=4.14,<5
+# Install torch and torchvision for your CUDA/CPU platform separately.

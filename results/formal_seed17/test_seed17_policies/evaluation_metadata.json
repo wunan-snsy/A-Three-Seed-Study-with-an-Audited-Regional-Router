@@ -1,0 +1,28 @@
+{
+  "checkpoint": "D:\\PhysCausalDiff\\output\\runs\\formal_seed17\\models.pt",
+  "manifest_paths": [
+    "D:\\PhysCausalDiff\\output\\manifests\\nju2k_test_official.jsonl",
+    "D:\\PhysCausalDiff\\output\\manifests\\nlpr_test_official.jsonl",
+    "D:\\PhysCausalDiff\\output\\manifests\\sip_test_official.jsonl"
+  ],
+  "threshold": -0.1,
+  "seed": 17,
+  "size": 320,
+  "region_size": 16,
+  "n_images": 1729,
+  "families": [
+    "clean",
+    "noise",
+    "holes",
+    "blur",
+    "shift",
+    "removal"
+  ],
+  "severities": [
+    1,
+    2,
+    3
+  ],
+  "replicates": 1,
+  "metrics": "MAE, RGB-reference MAE, mean benefit, per-image positive-harm rate, mean positive MAE harm, routed-region fraction"
+}

@@ -43,3 +43,5 @@ The evaluation uses 14 conditions: clean, four corruption families at three seve
 The main clean-results table derives from `results/formal_seed*/test_seed*_full/evaluation.csv`. The candidate-training ablation derives from `results/ablation_clean_candidate_seed*/paired_candidate_summary.csv` and its paired per-image CSV. The router diagnostics derive from the formal evaluation, calibration JSON files, and `results/formal_seed*/test_seed*_policies/`. Efficiency numbers derive from `results/formal_seed*/efficiency_seed*.json`.
 
 A model checkpoint is optional for checking the reported CSV values but necessary to regenerate predictions and image figures. Full-precision checkpoints are provided separately as release assets when available; the repository itself stores the lightweight numerical record. The original image datasets are never release assets.
+
+Two large per-image metric files are stored as `.csv.gz` (`formal_seed29/test_seed29_policies` and `formal_seed43/test_seed43_full`) without row omission; decompress them before direct CSV inspection.
