@@ -8,6 +8,18 @@ from models import RGBReference,RGBDCandidate,UtilityRouter,route_predictions
 
 def params(m): return sum(p.numel() for p in m.parameters())
 
+def profile_flops(fn, device):
+    """Return PyTorch-profiler FLOP estimates for one batch-1 forward pass."""
+    activities=[torch.profiler.ProfilerActivity.CPU]
+    if device.type=='cuda': activities.append(torch.profiler.ProfilerActivity.CUDA)
+    with torch.inference_mode(), torch.profiler.profile(
+            activities=activities, record_shapes=True, with_flops=True) as prof:
+        fn()
+        if device.type=='cuda': torch.cuda.synchronize()
+    total=sum(int(event.flops or 0) for event in prof.key_averages())
+    return {'flops':total,'gflops':total/1e9,
+            'method':'torch.profiler with_flops; supported operators only; batch size 1'}
+
 def bench(fn,device,warmup,iters):
     with torch.inference_mode():
         for _ in range(warmup): fn()
@@ -44,6 +56,9 @@ def main():
             'torch':torch.__version__,'platform':platform.platform(),'iterations':a.iterations,'warmup':a.warmup,
             'parameter_count':{'rgb_reference':params(rgbnet),'rgbd_candidate':params(rgbdnet),'router':params(router),
                                'two_detectors_plus_router':params(rgbnet)+params(rgbdnet)+params(router)},
+            'compute':{'rgb_reference':profile_flops(run_rgb,device),
+                       'rgbd_candidate':profile_flops(run_rgbd,device),
+                       'full_ucrr':profile_flops(run_full,device)},
             'timings':{'rgb_reference':bench(run_rgb,device,a.warmup,a.iterations),
                        'rgbd_candidate':bench(run_rgbd,device,a.warmup,a.iterations),
                        'full_ucrr':bench(run_full,device,a.warmup,a.iterations)},

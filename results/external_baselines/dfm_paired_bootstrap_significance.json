@@ -1,0 +1,87 @@
+{
+  "method": {
+    "difference": "corruption-trained minus clean-trained MAE; negative favors corruption training",
+    "bootstrap": "paired nonparametric bootstrap over test images",
+    "test": "two-sided paired Monte Carlo sign-flip test with +1 correction"
+  },
+  "results": [
+    {
+      "dataset": "NJU2K",
+      "test_condition": "clean",
+      "n": 500,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.012969177842140198,
+      "ci95_low": -0.013697814092040062,
+      "ci95_high": -0.01222725881934166,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    },
+    {
+      "dataset": "NJU2K",
+      "test_condition": "corruption",
+      "n": 500,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.00954151776432991,
+      "ci95_low": -0.010586796770244837,
+      "ci95_high": -0.008494876378774644,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    },
+    {
+      "dataset": "NLPR",
+      "test_condition": "clean",
+      "n": 300,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.01603690912326177,
+      "ci95_low": -0.016920534846683342,
+      "ci95_high": -0.01513603453586499,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    },
+    {
+      "dataset": "NLPR",
+      "test_condition": "corruption",
+      "n": 300,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.017190227856238683,
+      "ci95_low": -0.018211403500288725,
+      "ci95_high": -0.016151529413958393,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    },
+    {
+      "dataset": "SIP",
+      "test_condition": "clean",
+      "n": 929,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.011636577346096511,
+      "ci95_low": -0.012096089890589627,
+      "ci95_high": -0.011181399393806675,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    },
+    {
+      "dataset": "SIP",
+      "test_condition": "corruption",
+      "n": 929,
+      "comparison": "corruption128_minus_clean128",
+      "mean_mae_difference": -0.008604318962158762,
+      "ci95_low": -0.009222795953823752,
+      "ci95_high": -0.00797269434073641,
+      "paired_sign_flip_p_two_sided": 9.99990000099999e-06,
+      "bootstrap_resamples": 10000,
+      "sign_flip_resamples": 100000,
+      "random_seed": 20260929
+    }
+  ]
+}

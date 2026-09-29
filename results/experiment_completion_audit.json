@@ -1,0 +1,48 @@
+{
+  "audit_timestamp": "2026-09-29",
+  "formal_seeds": {
+    "17": {
+      "evaluation_rows": 42,
+      "condition_keys": 42,
+      "expected_condition_keys": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    },
+    "29": {
+      "evaluation_rows": 42,
+      "condition_keys": 42,
+      "expected_condition_keys": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    },
+    "43": {
+      "evaluation_rows": 42,
+      "condition_keys": 42,
+      "expected_condition_keys": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    }
+  },
+  "ablation_seeds": {
+    "17": {
+      "evaluation_rows": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    },
+    "29": {
+      "evaluation_rows": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    },
+    "43": {
+      "evaluation_rows": 42,
+      "per_image_rows": 24206,
+      "complete": true
+    }
+  },
+  "statistical_outputs": [
+    "test_bootstrap_seed17_29_43.csv",
+    "ablation_training_three_seed_summary.csv",
+    "efficiency_three_seed_with_flops.csv"
+  ]
+}

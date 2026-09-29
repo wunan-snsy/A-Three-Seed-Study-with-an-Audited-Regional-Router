@@ -1,0 +1,63 @@
+{
+  "checkpoint": "D:\\PhysCausalDiff\\output\\runs\\formal_seed43\\models.pt",
+  "seed": 43,
+  "input_size": [
+    320,
+    320
+  ],
+  "batch_size": 1,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "torch": "2.14.0+cu130",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "iterations": 100,
+  "warmup": 10,
+  "parameter_count": {
+    "rgb_reference": 11262881,
+    "rgbd_candidate": 22546465,
+    "router": 11937,
+    "two_detectors_plus_router": 33821283
+  },
+  "compute": {
+    "rgb_reference": {
+      "flops": 7767654400,
+      "gflops": 7.7676544,
+      "method": "torch.profiler with_flops; supported operators only; batch size 1"
+    },
+    "rgbd_candidate": {
+      "flops": 15394182400,
+      "gflops": 15.3941824,
+      "method": "torch.profiler with_flops; supported operators only; batch size 1"
+    },
+    "full_ucrr": {
+      "flops": 23172717200,
+      "gflops": 23.1727172,
+      "method": "torch.profiler with_flops; supported operators only; batch size 1"
+    }
+  },
+  "timings": {
+    "rgb_reference": {
+      "latency_ms_mean": 5.321596140861511,
+      "latency_ms_median": 5.082144021987915,
+      "latency_ms_p95": 6.4929377794265735,
+      "throughput_fps": 187.91354577277454,
+      "peak_cuda_allocated_mib": 151.845703125
+    },
+    "rgbd_candidate": {
+      "latency_ms_mean": 10.79068223953247,
+      "latency_ms_median": 10.538911819458008,
+      "latency_ms_p95": 12.436084890365601,
+      "throughput_fps": 92.672546350816,
+      "peak_cuda_allocated_mib": 155.8134765625
+    },
+    "full_ucrr": {
+      "latency_ms_mean": 19.208068141937257,
+      "latency_ms_median": 18.02680015563965,
+      "latency_ms_p95": 25.24063148498535,
+      "throughput_fps": 52.06145629068679,
+      "peak_cuda_allocated_mib": 156.2041015625
+    }
+  },
+  "threshold": -0.1,
+  "note": "Synchronized batch-1 inference; full_ucrr includes both detectors and the regional router."
+}

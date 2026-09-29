@@ -1,0 +1,13 @@
+dataset,train_regime,test_condition,n,mae_mean,mae_std,source_file
+NJU2K,clean128,clean,500,0.37417853116989136,0.06500244750593488,eval_nju2k_clean128_full_clean.json
+NJU2K,clean128,corruption,500,0.37417853116989136,0.06500244750593488,eval_nju2k_clean128_full_corr_fixed.json
+NJU2K,corruption128,clean,500,0.36120935332775117,0.07124244597617005,eval_nju2k_corr128_full_clean_fixed.json
+NJU2K,corruption128,corruption,500,0.3646370134055614,0.07218395042579401,eval_nju2k_corr128_full_corr.json
+NLPR,clean128,clean,300,0.3107953975101312,0.047427266003454704,eval_nlpr_clean128_full_clean.json
+NLPR,clean128,corruption,300,0.3107953975101312,0.047427266003454704,eval_nlpr_clean128_full_corr_fixed.json
+NLPR,corruption128,clean,300,0.2947584883868694,0.050571797178241944,eval_nlpr_corr128_full_clean_fixed.json
+NLPR,corruption128,corruption,300,0.2936051696538925,0.0511318041501615,eval_nlpr_corr128_full_corr.json
+SIP,clean128,clean,929,0.37669897859011836,0.05194348606751415,eval_sip_clean128_full_clean.json
+SIP,clean128,corruption,929,0.37669897859011836,0.05194348606751415,eval_sip_clean128_full_corr_fixed.json
+SIP,corruption128,clean,929,0.36506240124402184,0.057510302303011344,eval_sip_corr128_full_clean_fixed.json
+SIP,corruption128,corruption,929,0.3680946596279596,0.05785017050395612,eval_sip_corr128_full_corr.json
