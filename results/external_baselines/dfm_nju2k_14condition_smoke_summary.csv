@@ -1,0 +1,15 @@
+condition,n,mae_mean,file
+blur_1,8,0.3751573897898197,eval_nju2k_caverproto_blur_1.json
+blur_2,8,0.3758424110710621,eval_nju2k_caverproto_blur_2.json
+blur_3,8,0.3776714727282524,eval_nju2k_caverproto_blur_3.json
+clean,8,0.37414225563406944,eval_nju2k_caverproto_clean.json
+holes_1,8,0.3850659169256687,eval_nju2k_caverproto_holes_1.json
+holes_2,8,0.3668586313724518,eval_nju2k_caverproto_holes_2.json
+holes_3,8,0.3485533632338047,eval_nju2k_caverproto_holes_3.json
+noise_1,8,0.3737678937613964,eval_nju2k_caverproto_noise_1.json
+noise_2,8,0.38134708628058434,eval_nju2k_caverproto_noise_2.json
+noise_3,8,0.3595514018088579,eval_nju2k_caverproto_noise_3.json
+removal,8,0.36267227679491043,eval_nju2k_caverproto_removal.json
+shift_1,8,0.37444527819752693,eval_nju2k_caverproto_shift_1.json
+shift_2,8,0.372997984290123,eval_nju2k_caverproto_shift_2.json
+shift_3,8,0.37261487916111946,eval_nju2k_caverproto_shift_3.json

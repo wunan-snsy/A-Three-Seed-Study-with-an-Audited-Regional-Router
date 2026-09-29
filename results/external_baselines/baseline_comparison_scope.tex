@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering
+\caption{Audited external baselines and the scope of their reproducible evidence.}
+\label{tab:external_scope}
+\begin{tabular}{llll}
+\toprule
+Baseline & Weight source & Evaluation scope & Use in manuscript \\
+\midrule
+CAVER-R50D & official checkpoint & 3 datasets $\times$ 14 conditions & full quantitative baseline \\
+DFM-Net & clean/corruption from-scratch checkpoints & full test splits, corresponding conditions & cross-architecture validation \\
+HDFNet & from-scratch feasibility checkpoints & 64 images/dataset, clean/corruption & feasibility diagnostic only \\
+\bottomrule
+\end{tabular}
+\end{table}

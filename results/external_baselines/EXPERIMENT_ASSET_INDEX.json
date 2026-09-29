@@ -1,0 +1,9 @@
+{
+  "protocol": {"conditions": 14, "datasets": ["NJU2K", "NLPR", "SIP"]},
+  "baselines": {
+    "CAVER_R50D": {"checkpoint": "external_baselines/CAVER/output/caver-r50d-rgbd-njudnlpr.pt", "evaluation": "output/external_baselines/caver_protocol/condition_summary.csv", "coverage": "full 14-condition protocol"},
+    "DFM-Net": {"clean_checkpoint": "output/external_baselines/dfm_training/clean128/epoch_1.pth", "corruption_checkpoint": "output/external_baselines/dfm_training/corruption128/epoch_1.pth", "evaluation": "output/external_baselines/dfm_training/evaluation_full_summary.csv", "coverage": "complete test splits, corresponding clean/corruption conditions"},
+    "HDFNet": {"checkpoint": "output/external_baselines/hdfnet_training/epoch_1.pth", "evaluation": "output/external_baselines/hdfnet_training/smoke_summary.csv", "coverage": "8 clean + 8 corruption images per dataset; from-scratch feasibility only", "limitation": "no official checkpoint available in execution environment"}
+  },
+  "manuscript_assets": ["output/external_baselines/caver_family_mae_table.tex", "output/external_baselines/dfm_full_table.tex", "output/external_baselines/paper_experiment_text.tex", "output/external_baselines/revised_data_availability.tex"]
+}

@@ -45,3 +45,7 @@ The main clean-results table derives from `results/formal_seed*/test_seed*_full/
 A model checkpoint is optional for checking the reported CSV values but necessary to regenerate predictions and image figures. Full-precision checkpoints are not included in this release; regenerate them with the training scripts and recorded seeds. The original image datasets are never release assets.
 
 Two large per-image metric files are stored as `.csv.gz` (`formal_seed29/test_seed29_policies` and `formal_seed43/test_seed43_full`) without row omission; decompress them before direct CSV inspection.
+
+## External-baseline audit results
+
+`results/external_baselines/` contains the machine-readable summaries, tables, and evidence report for CAVER-R50D, DFM-Net, and HDFNet. CAVER has complete three-dataset 14-condition evaluation; DFM-Net has complete clean/corruption cross-architecture evaluation; HDFNet has a from-scratch feasibility reproduction with 14-condition smoke coverage (8 images per condition). HDFNet results are not official pretrained benchmark numbers.

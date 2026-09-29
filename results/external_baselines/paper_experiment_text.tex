@@ -1,0 +1,13 @@
+% Evidence-bound experiment text generated from verified CSV/JSON outputs.
+\subsection{External-baseline protocol}
+We evaluated the official CAVER-R50D checkpoint under the same 14-condition depth-degradation protocol used by the main method. The protocol comprises the clean condition, three severity levels for each of additive noise, missing-depth holes, blur, and horizontal shift, and a complete depth-removal condition. NJU2K, NLPR, and SIP contain 500, 300, and 929 test images, respectively; therefore, every CAVER condition is evaluated on the complete official test split.
+
+Table~\ref{tab:caver_family_mae} reports native-resolution MAE averaged over severity levels. The largest degradation is consistently associated with depth holes or complete depth removal, while blur and shift remain closer to the clean reference. These observations are descriptive robustness evidence and do not imply statistical superiority without paired tests against the proposed method.
+
+\subsection{Cross-architecture training verification}
+To test whether the training protocol transfers beyond the proposed architecture, we adapted the official DFM-Net implementation to the audited JSONL manifests and trained two versions from the same initialization and optimizer schedule: a clean-trained model and a corruption-trained model. The two models were trained on 128 NJU2K training images for one epoch and evaluated on the complete NJU2K, NLPR, and SIP test splits. The corresponding-condition results are reported in Table~\ref{tab:dfm_full}; each value is computed over 500, 300, or 929 images, respectively.
+
+The DFM-Net experiment is a cross-architecture feasibility validation rather than a claim of state-of-the-art performance: it uses a deliberately short, resource-bounded training schedule and a compatibility patch required by the current torchvision stride layout. The exact checkpoint, manifest, seed, software version, and evaluation JSON files are archived with the code release.
+
+\subsection{Availability and baseline limitations}
+The CAVER checkpoint and all generated condition summaries are archived locally with their source manifests and SHA-256 records. DFM-Net source code is available under its upstream license, while the adapted trainer and generated checkpoints are included in the experiment package. We audited the official HDFNet repository and license, but no redistributable official checkpoint was available in the execution environment; consequently, HDFNet is reported as an audited candidate baseline only and no numerical result is claimed for it.
