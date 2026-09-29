@@ -42,3 +42,5 @@ DFM-Net clean checkpoint evaluated on all 14 protocol conditions for an 8-image 
 HDFNet multistep checkpoint evaluated over all 14 protocol conditions on an 8-image NJU2K subset; summary: hdfnet_training/nju2k_14condition_8_summary.csv.
 
 HDFNet 14-condition protocol smoke coverage is now complete for NJU2K, NLPR, and SIP (42 conditions total, 8 images per condition); aggregate: hdfnet_training/all_datasets_14condition_8_summary.csv.
+
+HDFNet 64-sample full-loop checkpoints (clean/corruption, 32 optimization steps each) evaluated on 64 images per dataset; summary: hdfnet_training/hdfnet64_evaluation_summary.csv.

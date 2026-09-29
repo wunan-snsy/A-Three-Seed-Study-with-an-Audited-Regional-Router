@@ -1,0 +1,7 @@
+dataset,condition,n,mae_mean,file
+nju2k,clean,64,0.5620021265931427,eval_nju2k_hdfnet64_clean64.json
+nju2k,corruption,64,0.5620021265931427,eval_nju2k_hdfnet64_corr64.json
+nlpr,clean,64,0.6013752883300185,eval_nlpr_hdfnet64_clean64.json
+nlpr,corruption,64,0.6013752883300185,eval_nlpr_hdfnet64_corr64.json
+sip,clean,64,0.5874693794175982,eval_sip_hdfnet64_clean64.json
+sip,corruption,64,0.5874693794175982,eval_sip_hdfnet64_corr64.json
