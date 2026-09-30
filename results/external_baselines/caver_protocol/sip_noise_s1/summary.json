@@ -1,0 +1,13 @@
+{
+  "method": "CAVER_R50D",
+  "checkpoint": "D:\\PhysCausalDiff\\external_baselines\\CAVER\\output\\caver-r50d-rgbd-njudnlpr.pt",
+  "manifest": "D:\\PhysCausalDiff\\github_release\\manifests\\sip_test_official.jsonl",
+  "family": "noise",
+  "severity": 1,
+  "seed": 17,
+  "images": 929,
+  "mae_320": 0.04149804025210753,
+  "mae_native": 0.041466493781082595,
+  "peak_memory_mib": 279.115234375,
+  "torch": "2.14.0+cu130"
+}
