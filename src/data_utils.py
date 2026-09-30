@@ -99,6 +99,14 @@ def corrupt_depth(depth: torch.Tensor, valid: torch.Tensor, family: str, severit
         od[:, dy0:dy0 + sy1 - sy0, dx0:dx0 + sx1 - sx0] = d[:, sy0:sy1, sx0:sx1]
         ov[:, dy0:dy0 + sy1 - sy0, dx0:dx0 + sx1 - sx0] = v[:, sy0:sy1, sx0:sx1]
         return od, ov
+    if family == "quantize":
+        # Held-out corruption: quantization is never sampled by the training mixture.
+        levels = (32, 16, 8)[severity - 1]
+        return (torch.round(d * (levels - 1)) / (levels - 1)).clamp(0, 1), v
+    if family == "noise_shift":
+        # Held-out composition: constituents occur in training, but never jointly.
+        noisy, noisy_valid = corrupt_depth(d, v, "noise", severity, rng)
+        return corrupt_depth(noisy, noisy_valid, "shift", severity, rng)
     raise ValueError(f"Unknown corruption family: {family}")
 
 

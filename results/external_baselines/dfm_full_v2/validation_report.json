@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "json_files": 252,
+  "expected_json_files": 252,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "training_modes": [
+    "clean",
+    "corruption"
+  ],
+  "datasets": {
+    "nju2k": 500,
+    "nlpr": 300,
+    "sip": 929
+  },
+  "conditions": [
+    "clean",
+    "noise_1",
+    "noise_2",
+    "noise_3",
+    "holes_1",
+    "holes_2",
+    "holes_3",
+    "blur_1",
+    "blur_2",
+    "blur_3",
+    "shift_1",
+    "shift_2",
+    "shift_3",
+    "removal"
+  ],
+  "all_values_finite": true,
+  "notes": "Negative paired differences favor corruption training. Statistics use paired per-image MAE."
+}

@@ -141,6 +141,7 @@ def main():
     ap.add_argument('--severities',default='1,2,3');ap.add_argument('--replicates',type=int,default=1)
     ap.add_argument('--calibration-conditions',default='clean,noise:1,noise:2,noise:3,holes:1,holes:2,holes:3,blur:1,blur:2,blur:3,shift:1,shift:2,shift:3,removal')
     ap.add_argument('--mae-only',action='store_true',help='Skip slow S-measure, weighted F-measure, and E-measure calculations')
+    ap.add_argument('--full-metrics-all',action='store_true',help='Calculate S-measure, weighted F-measure, and E-measure for every condition')
     a=ap.parse_args();device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     ck=torch.load(a.checkpoint,map_location='cpu',weights_only=False);size=ck.get('size',a.size);region=ck.get('region_size',16)
     rn=RGBReference(False);cn=RGBDCandidate(False);un=UtilityRouter(region)
@@ -176,7 +177,8 @@ def main():
                 data=records(rn,cn,un,rows,size,a.seed,fam,sev,rep,a.batch_size,device)
                 for ds in sorted({x['dataset'] for x in data}):
                     subset=[x for x in data if x['dataset']==ds]
-                    result.append({'dataset':ds,'family':fam,'severity':sev,'replicate':rep,**routed_mae(subset,a.threshold,region,full_metrics=(fam=='clean' and not a.mae_only))})
+                    use_full_metrics=(not a.mae_only) and (a.full_metrics_all or fam=='clean')
+                    result.append({'dataset':ds,'family':fam,'severity':sev,'replicate':rep,**routed_mae(subset,a.threshold,region,full_metrics=use_full_metrics)})
                     image_result.extend(per_image_rows(subset,a.threshold,region,ds,fam,sev,rep))
                     for policy,threshold in (('fixed_zero',0.0),('validity_only',-1.0),('rgb_only',1.0)):
                         baseline_result.append({'policy':policy,'dataset':ds,'family':fam,'severity':sev,'replicate':rep,
@@ -190,7 +192,8 @@ def main():
         w=csv.DictWriter(f,fieldnames=list(baseline_result[0]));w.writeheader();w.writerows(baseline_result)
     meta={'checkpoint':str(Path(a.checkpoint).resolve()),'manifest_paths':[str(Path(p).resolve()) for p in manifest_paths],'threshold':a.threshold,'seed':a.seed,
           'size':size,'region_size':region,'n_images':len(rows),'families':fams,'severities':sevs,'replicates':a.replicates,
-          'metrics':'MAE, RGB-reference MAE, mean benefit, per-image positive-harm rate, mean positive MAE harm, routed-region fraction'}
+          'metrics':'MAE, RGB-reference MAE, mean benefit, per-image positive-harm rate, mean positive MAE harm, routed-region fraction',
+          'full_metrics_all':a.full_metrics_all}
     (out/'evaluation_metadata.json').write_text(json.dumps(meta,indent=2),encoding='utf8');print(path)
 
 if __name__=='__main__':main()
